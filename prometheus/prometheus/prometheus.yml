@@ -5,7 +5,7 @@ global:
 alerting:
   alertmanagers:
     - static_configs:
-        - targets: []
+        - targets: [ ]
       scheme: http
       timeout: 10s
       api_version: v1
@@ -19,3 +19,11 @@ scrape_configs:
     static_configs:
       - targets:
           - localhost:9090
+  - job_name: 'quarkus-micrometer'
+    metrics_path: '/q/metrics'
+    scrape_interval: 3s
+    scheme: http
+    static_configs:
+        - targets:
+          - localhost:8080
+
