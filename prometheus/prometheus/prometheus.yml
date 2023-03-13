@@ -25,5 +25,5 @@ scrape_configs:
     scheme: http
     static_configs:
         - targets:
-          - localhost:8080
+          - 10.0.1.181:8080
 
